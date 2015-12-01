@@ -18,4 +18,4 @@ PostInstall:
   - npm install
 
 Exec:
-  - node server/server.js
+  - server/node server.js
