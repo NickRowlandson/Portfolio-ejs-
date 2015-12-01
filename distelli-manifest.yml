@@ -7,15 +7,18 @@ rowls/portfolio:
     - echo "---Beginning PreRelease---"
     - echo "--Installing build dependencies--"
     - echo "-Updating apt-get-"
+    - npm config set registry http://registry.npmjs.org/
     - sudo apt-get -y update
     - echo "-Installing nodejs-"
     - sudo apt-get -y install nodejs
     - echo "-Installing npm-"
     - sudo apt-get -y install npm
-    - echo "--Building--"
-    - sudo npm install
-    - echo "--Testing--"
-    - npm test
+    - echo "--Intall python--"
+    -apt-get install -y python-software-properties python g++ make
+    - echo "--Building--"  
+    -apt-get update && apt-get install nodejs
+    -sudo npm update
+    -sudo npm install
   
   PkgExclude:
     - node_modules/
