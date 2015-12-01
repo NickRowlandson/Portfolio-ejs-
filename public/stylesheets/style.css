@@ -1,0 +1,104 @@
+/*
+Project Name: Assignment 3 (Personal Portfolio TODO)
+By: Nick Rowlandson
+Student ID: 200167125
+
+CSS w/ Twitter Bootstrap
+*/
+
+.completed-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+#searchTodo, #newTodo {
+    display: block;
+    width: 30%;
+    border: 2px solid grey;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.mainNav {
+    padding-bottom: 40px;
+}
+
+.navEdit {
+    background-color: #c3ba8f !important;
+    border-color: #c3ba8f !important;   
+}
+
+.bg { 
+    background: url(../images/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.footer > ul {
+    width:100%;
+    position:fixed;
+    bottom:0;
+    z-index: -11;
+}
+
+.content {
+    color: #f2ebd7;
+}
+
+.panelEdit {
+    background-color: #8f8064 !important;
+    padding: 20px;
+    margin-bottom: 40px;
+    margin-top: 80px;
+    border-color: #8f8064 !important;
+}
+
+.linkedIn {
+    width: 40px;   
+}
+
+.personalPic {
+    width:240px;
+    border-radius: 5px;
+}
+.customWell2 {
+    background-color: #c3ba8f;
+    padding:20px;
+    border-radius: 5px;
+    color: #333333;
+}
+
+.customWell1 {
+    background-color: #c3ba8f;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #333333;
+    width: 240px;
+}
+
+.customWell {
+    background-color: #c3ba8f;
+    padding:20px;
+    border-radius: 5px;
+    color: #333333;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imgBorder {
+    border-radius: 40px;
+    padding: 20px;
+}
+
+.heading {
+    color: #333333;
+    margin-left: 20px;
+}

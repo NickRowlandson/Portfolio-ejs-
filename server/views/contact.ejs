@@ -1,0 +1,33 @@
+<% include partials/header.ejs %>
+
+	<div class="content panel panelEdit panel-default col-md-8">
+		<h3 class="heading"><strong>Talk to me!</strong></h3><br \>
+		<div class="customWell">
+			<form method="post" action="#" class="form" >
+				<legend class="legend">Your Information</legend>
+				<div style="max-width: 300px;">
+					<div>
+						<input name="firstName" ng-model="contactData.firstName" required class="form-control" placeholder="First name *" />
+					</div>
+					<div>
+						<input name="lastName" ng-model="contactData.lastName" required placeholder="Last name *" class="form-control"/>
+					</div>
+					<div>
+						<input name="email" type="email" ng-model="contactData.email" required class="form-control" placeholder="Email *" />
+					</div>
+				</div>
+				<br \>
+				<legend class="legend">Details</legend><br \>
+				<div>
+					<input name="subject" ng-model="contactData.subject" required placeholder="Subject *" class="form-control" />
+				</div>
+				<div>
+					<textarea name="description" ng-model="contactData.description" required maxlength="500" placeholder="Description *" class="form-control"></textarea>
+				</div>
+				<input type="submit" value="Send" ng-click="sendContactEmail()" class="btn btn-primary" />
+			</form>
+		</div>
+	</div>
+
+<% include partials/boot.ejs %>
+<% include partials/footer.ejs %>
