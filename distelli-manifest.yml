@@ -34,10 +34,7 @@ rowls/portfolio:
     - else
     -     echo "Default NGINX already removed"
     - fi
-  
-  Env:
-    - PORT: 3000
-    
+
   Exec:
     - 'if [ -a /etc/nginx/sites-available/node ]; then'
     -     sudo rm /etc/nginx/sites-available/node
