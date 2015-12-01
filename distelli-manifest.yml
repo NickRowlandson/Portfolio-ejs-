@@ -1,19 +1,37 @@
 PkgInclude:
   - '*'
 
-PkgExclude:
-  - node_modules/
-
 PreRelease:
   - npm install
+  - npm test
 
 PreInstall:
   - sudo apt-get update
   - sudo apt-get install nodejs -y
   - sudo apt-get install npm -y
-
-PostInstall:
-  - npm install
+  - 'if [ -a /etc/nginx ]; then'
+  -     echo "NGINX is already installed"
+  - else
+  -     sudo apt-get install nginx -y
+  - fi
+  - 'if [ -a /etc/nginx/sites-enabled/default ]; then'
+  -     sudo rm /etc/nginx/sites-enabled/default
+  - else
+  -     echo "Default NGINX already removed"
+  - fi
 
 Exec:
-  - node server/server.js
+  - 'if [ -a /etc/nginx/sites-available/node ]; then'
+  -     sudo rm /etc/nginx/sites-available/node
+  -     sudo mv node /etc/nginx/sites-available/node
+  - else
+  -     sudo mv node /etc/nginx/sites-available/node
+  - fi
+  - 'if [ -a /etc/nginx/sites-enabled/node ]; then'
+  -     sudo rm /etc/nginx/sites-enabled/node
+  -     sudo ln -s /etc/nginx/sites-available/node /etc/nginx/sites-enabled/node
+  - else
+  -     sudo ln -s /etc/nginx/sites-available/node /etc/nginx/sites-enabled/node
+  - fi
+  - sudo service nginx restart -y
+  - /usr/bin/nodejs app.js
