@@ -14,11 +14,10 @@ rowls/portfolio:
     - echo "-Installing npm-"
     - sudo apt-get -y install npm
     - echo "--Intall python--"
-    -apt-get install -y python-software-properties python g++ make
+    - apt-get install -y python-software-properties python g++ make
     - echo "--Building--"  
-    -apt-get update && apt-get install nodejs
-    -sudo npm update
-    -sudo npm install
+    - sudo npm update
+    - sudo npm install
   
   PkgExclude:
     - node_modules/
