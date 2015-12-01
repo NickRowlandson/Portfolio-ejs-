@@ -36,4 +36,4 @@ Exec:
   -     sudo ln -s /etc/nginx/sites-available/node /etc/nginx/sites-enabled/node
   - fi
   - sudo service nginx restart -y
-  - /usr/bin/nodejs app.js
+  - node server/server.js
