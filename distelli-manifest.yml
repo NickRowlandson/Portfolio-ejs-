@@ -13,8 +13,6 @@ rowls/portfolio:
     - sudo apt-get -y install nodejs
     - echo "-Installing npm-"
     - sudo apt-get -y install npm
-    - echo "--Intall python--"
-    - apt-get install -y python-software-properties python g++ make
     - echo "--Building--"  
     - sudo npm update
     - sudo npm install
