@@ -4,18 +4,8 @@ rowls/portfolio:
     - '*'
   
   PreRelease:
-    - echo "---Beginning PreRelease---"
-    - echo "--Installing build dependencies--"
-    - echo "-Updating apt-get-"
-    - npm config set registry http://registry.npmjs.org/
-    - sudo apt-get -y update
-    - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs
-    - echo "-Installing npm-"
-    - sudo apt-get -y install npm
     - echo "--Building--"  
-    - sudo npm update
-    - sudo npm install
+    - npm install
   
   PkgExclude:
     - node_modules/
