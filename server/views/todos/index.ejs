@@ -7,14 +7,13 @@
         <script type="text/ng-template" id="/todos.html">
             
             <div ng-init="setUserName('<%= username %>')">
-                <h1><%= title %></h1>
+                <h3><strong><%= title %></strong></h3>
                 <div class="panel-body customWell">
                     <h4><span class="badge">{{remainingTodos()}}</span> Todos of <span class="badge">{{totalTodos()}}</span> remaining</h4>
-                    <h5>Search Todos:</h5>
-                    <input type="text" ng-model="search.name" id="searchTodo" placeholder="Todo to find" class="form-control">
+                    <input type="text" ng-model="search.name" id="searchTodo" placeholder="Search list..." class="form-control">
 
                     <ul class="list-group">
-                        <li class="list-group-item active">Current Todos</li>
+                        <li class="list-group-item"><strong>Things to do:</strong></li>
                         <li ng-repeat="todo in todos | filter: search | filter: {username: '<%= username %>'}" class="list-group-item">
                             <div class="btn-group">
                                 <button type="button" ng-show="!editing[$index]" ng-click="edit($index)" class="btn btn-default "><i class="fa fa-edit"></i></button>
@@ -34,7 +33,7 @@
                         </li>
                     </ul>
 
-                    <h5>New Todo</h5>
+                    <h5 style="color:#0079B4;"><i class="fa fa-plus-circle"></i> New Todo</h5>
                     <input type="text" ng-model="newTodo" id="newTodo" placeholder="Add a new Todo" class="form-control">
                     
                     <button type="button" ng-click="save()" class="btn btn-primary">Create</button>

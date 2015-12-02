@@ -31,50 +31,97 @@
       </div> <!-- navbar-header -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li role="presentation"><a href="/projects">Projects</a></li>
-            <li role="presentation"><a href="/skills">Skills</a></li>
-            <li role="presentation"><a href="/interests">Interests</a></li>
-            <li role="presentation"><a href="/contact">Contact</a></li>
+            <% if(title == "Home" ) { %>
+              <li class="active">
+            <% } else { %>
+              <li>
+            <% } %>
+                <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+              </li>
+            <% if(title == "Projects" ) { %>
+              <li class="active">
+            <% } else { %>
+              <li>
+            <% } %>
+                <a href="/projects">Projects</a>
+              </li>
+            <% if(title == "Skills" ) { %>
+              <li class="active">
+            <% } else { %>
+              <li>
+            <% } %>
+                <a href="/skills">Skills</a>
+              </li>
+            <% if(title == "Interests" ) { %>
+              <li class="active">
+            <% } else { %>
+              <li>
+            <% } %>
+                <a href="/interests">Interests</a>
+              </li>
+            <% if(title == "Contact" ) { %>
+              <li class="active">
+            <% } else { %>
+              <li>
+            <% } %>
+                <a href="/contact">Contact</a>
+              </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <% if(title == "Home" ) { %>
-            <li class="active">
-          <% } else { %>
-          <li>
-            <% } %>
-            <a href="/">Home</a></li>
-          <li role="separator" class="divider"></li>
+        
+          <!-- if displayName is set then display the admin nav -->
           <% if (displayName) { %>
             <% if(title == "Users" ) { %>
-            <li class="active">
-              <% } else { %>
-            <li>
-              <% } %>
-              <a href="/users">Users</a></li>
+              <li class="active">
+            <% } else { %>
+              <li>
+            <% } %>
+                <a href="/users">User List</a>
+              </li>
             <% if(title == "Todo List" ) { %>
-            <li class="active">
-              <% } else { %>
-            <li>
-              <% } %>
-              <a href="/todoList">Todo List</a></li>
-            <li class="navbar-text">Hello,
-              <%= displayName %>
-            </li>
-            <li><a href="/logout">Logout</a></li>
+              <li class="active">
             <% } else { %>
-              <% if(title == "Register" ) { %>
-            <li class="active">
-            <% } else { %>
-            <li>
+              <li>
             <% } %>
-                <a href="/register">Register</a></li>
-              <% if(title == "Login" ) { %>
-            <li class="active">
+                <a href="/todoList">Todo List</a>
+              </li>
+              <li class="navbar-text">User:
+                <%= displayName %>
+              </li>
+              <li>
+                <a href="/logout">
+                  <button type="button" class="btn-sm btn-danger" aria-label="Left Align" >
+                    <span class="glyphicon glyphicon-log-out"></span> Logout
+                  </button>
+                </a>
+              </li>
+            
+          <!-- else display login and register buttons -->
+          <% } else { %>
+            <% if(title == "Register" ) { %>
+              <li class="active">
             <% } else { %>
-            <li>
+              <li>
             <% } %>
-                <a href="/login">Login</a></li>
-              <% } %>
+                <a href="/register">
+                  <button type="button" class="btn-sm btn-primary" aria-label="Left Align" >
+                    Register
+                  </button>
+                </a>
+              </li>  
+            <% if(title == "Login" ) { %>
+              <li class="active">
+            <% } else { %>
+              <li>
+            <% } %>
+                <a href="/login">
+                  <button type="button" class="btn-sm btn-primary" aria-label="Left Align" >
+                    Login
+                  </button>
+                </a>
+              </li>
+            <% } %>
+              
         </ul> <!-- nav navbar-nav navbar-right -->
       </div> <!-- collapse navbar-collapse -->
     </div> <!-- container-fluid -->
